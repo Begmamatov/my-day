@@ -1,47 +1,117 @@
 'use client'
-import Modal from '@mui/material/Modal';
 import visibleStore from '../../store/VisibleStore'
 import { observer } from 'mobx-react-lite';
 import styles from "./productInfo.module.css"
+import Modal from 'react-modal';
+import InputMask from 'react-input-mask';
+import productStore from '@/app/store/PraductInfo';
+import { Notifocation } from '@/app/store/Notification';
+import { useState } from 'react';
+import axios from 'axios';
 
 
 const ProductInfo = () => {
 
   const { hide, visiable } = visibleStore
+  const { oneProduct, form, setForm, clearForm } = productStore
+  const [loading, setLoading] = useState(false)
+
+
+
+  var data = {
+    service_id: 'gmail',
+    template_id: 'my-day',
+    user_id: 'n1bsvEOtpEtAp4_Oc',
+    template_params: {
+      ...form
+    }
+  };
+
+  const sendEmail = async () => {
+    if (form.tel.length < 18) {
+      Notifocation.error('Telefon raqamni to`liq kiriting')
+      return
+    }
+    setLoading(true)
+    await axios({
+      method: 'post',
+      url: 'https://api.emailjs.com/api/v1.0/email/send',
+      data: data,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => {
+      Notifocation.success('Sizning buyurtmangiz qabul qilindi, tez orada siz bilan bog`lanamiz')
+      hide('productInfo')
+      clearForm()
+    }).catch(err => {
+      Notifocation.error('Xatolik yuz berdi')
+    })
+    setLoading(false)
+  }
 
   return (
     <Modal
-      open={visiable.productInfo}
-      onClose={() => hide('productInfo')}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+      isOpen={visiable.productInfo}
+      onRequestClose={() => hide('productInfo')}
+      className={styles.modal}
+      overlayClassName={styles.overlay}
+      style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 1000
+        }
+      }}
     >
       <div className={styles.container}>
-        <div className={styles.leftBox}>
-          <img src="/bg5.png" alt="" />
+        <div className={styles.closeBtn} onClick={() => hide('productInfo')}>
+          <img src="/x.svg" alt="" />
+        </div>
+        <div className={styles.leftBox} >
+          <div style={{
+            backgroundImage: `url(${oneProduct.image})`,
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            zIndex: 1000,
+            filter: 'blur(5px)'
+          }}></div>
+          <img src={oneProduct.image} alt="" />
         </div>
         <div className={styles.rightBox}>
-          <h3 className={styles.name}>Sweet Corn</h3>
-          <p className={styles.leght}>1lb</p>
+          <h3 className={styles.name}>{oneProduct.name}</h3>
+          <p className={styles.leght}>{oneProduct.criterion}</p>
           <p className={styles.info}>
-            Maize, also known as corn, is a cereal grain
-            first domesticated by indigenous peoples in
-            southern Mexico about 10,000 years ago. The
-            leafy stalk of th...
-            Maize, also known as corn, is a cereal grain
-            first domesticated by indigenous peoples in
-            southern Mexico about 10,000 years ago. The
-            leafy stalk of th...
+            {
+              oneProduct.description
+            }
           </p>
-          <h2 className={styles.price}>$4.00<span className={styles.sprice}>$5.00</span></h2>
+          <h2 className={styles.price}>{oneProduct.price}<span className={styles.sprice}>{oneProduct.discountPrice}</span></h2>
           <div className={styles.btnBox}>
-            <button>-</button>
-            <h4 className={styles.size}>1</h4>
-            <button>+</button>
+            <button onClick={() => setForm(form.amount - 1, 'amount')}>-</button>
+            <h4 className={styles.size}>{form.amount}</h4>
+            <button onClick={() => setForm(form.amount + 1, 'amount')}>+</button>
           </div>
           <div className={styles.bottom}>
-            <input type="tel" className={styles.numberInput} />
-            <button className={styles.buyBtn}>Buy</button>
+            <InputMask
+              className={styles.numberInput}
+              mask="+ \9\98 99 999 99 99"
+              maskChar=" "
+              alwaysShowMask={true}
+              value={form.tel}
+              onChange={(e) => setForm(e.target.value, 'tel')}
+            />
+            <button
+              className={styles.buyBtn}
+              onClick={sendEmail}
+            >
+              {
+                loading ? <img src='./Loader.svg' className={styles.spinner} /> : 'Buy'
+              }
+            </button>
           </div>
         </div>
       </div>

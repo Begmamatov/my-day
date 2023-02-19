@@ -3,6 +3,7 @@
 import React from 'react'
 import styles from "./banner.module.css"
 import Carousel from 'react-elastic-carousel'
+import useWindowSize from "@rooks/use-window-size"
 
 const dataImage = [
   {
@@ -43,25 +44,27 @@ const Banner = () => {
 
   const [itemsToShow, setItemsToShow] = React.useState(3)
 
+  const { innerWidth } = useWindowSize()
+
   React.useEffect(() => {
-    if (window.innerWidth < 576) {
+    if (innerWidth && innerWidth < 576) {
       setItemsToShow(1)
-    } else if (window.innerWidth < 768) {
+    } else if (innerWidth && innerWidth < 768) {
+      setItemsToShow(1)
+    } else if (innerWidth && innerWidth < 992) {
       setItemsToShow(2)
-    } else if (window.innerWidth < 992) {
-      setItemsToShow(3)
     } else {
       setItemsToShow(3)
     }
-  }, [window.innerWidth])
+  }, [])
 
   return (
     <div className={styles.container}>
       {/* @ts-ignore  */}
-      <Carousel itemsToShow={1} easing="cubic-bezier(1,.15,.55,1.54)"
+      <Carousel itemsToShow={itemsToShow} easing="cubic-bezier(1,.15,.55,1.54)"
         tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
-        itemPadding={[0, 20]}
-        transitionMs={700} showArrows={false} enableAutoPlay autoPlaySpeed={3000}>
+        itemPadding={[5, 20]}
+        transitionMs={700} showArrows={false} enableAutoPlay autoPlaySpeed={4000}>
         {
           dataImage.map((item, index) => {
             return (

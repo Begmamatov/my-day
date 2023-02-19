@@ -1,51 +1,74 @@
-export const ProductData = [
+import { productType } from "@/app/store/PraductInfo";
+
+export const ProductData: productType[] = [
     {
         id: 1,
         name: "Camera",
         price: "19 900 ",
         cost: "uzs / 1 piece",
-        image:  "/bg1.png"
+        image: "/bg1.png",
+        description: "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th... Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th...",
+        discountPrice: 0,
+        criterion: "1 lb",
     },
     {
         id: 2,
         name: "Camera",
         price: "19 900 ",
         cost: "uzs / 1 piece",
-        image:  "/bg2.png"
+        image: "/bg2.png",
+        description: "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th... Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th...",
+        discountPrice: 0,
+        criterion: "1 lb",
     },
     {
         id: 3,
         name: "Camera",
         price: "19 900 ",
         cost: "uzs / 1 piece",
-        image:  "/bg3.png"
+        image: "/bg3.png",
+        description: "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th... Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th...",
+        discountPrice: 0,
+        criterion: "1 lb",
     },
     {
         id: 4,
         name: "Camera",
         price: "19 900 ",
         cost: "uzs / 1 piece",
-        image:  "/bg4.png"
+        image: "/bg4.png",
+        description: "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th... Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th...",
+        discountPrice: 0,
+        criterion: "1 lb",
     },
     {
         id: 5,
         name: "Camera",
         price: "19 900 ",
         cost: "uzs / 1 piece",
-        image:  "/bg5.png"
+        image: "/bg5.png",
+        description: "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th... Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th...",
+        discountPrice: 0,
+        criterion: "1 lb",
     },
     {
         id: 6,
         name: "Camera",
         price: "19 900 ",
         cost: "uzs / 1 piece",
-        image:  "/bg6.png"
+        image: "/bg6.png",
+        description: "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th... Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th...",
+        discountPrice: 0,
+        criterion: "1 lb",
     },
     {
         id: 7,
         name: "Camera",
         price: "19 900 ",
         cost: "uzs / 1 piece",
-        image:  "/bg7.png"
+        image: "/bg7.png",
+        description: "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th... Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of th...",
+        discountPrice: 0,
+        criterion: "1 lb",
     }
 ]

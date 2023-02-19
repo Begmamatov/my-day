@@ -1,5 +1,6 @@
 'use client'
 
+import productStore from '@/app/store/PraductInfo';
 import { observer } from 'mobx-react-lite';
 import visibleStore from '../../store/VisibleStore'
 import { ProductData } from './productData';
@@ -8,13 +9,16 @@ import styles from "./productList.module.css";
 const ProductList = () => {
 
     const { show } = visibleStore
+    const { setProduct } = productStore
 
     return (
         <div className={styles.container}>
             <div className={styles.content}>
                 {ProductData.map((e, index) => {
                     return (
-                        <div className={styles.box} key={index}>
+                        <div className={styles.box} key={index}
+                            onClick={() => setProduct(e)}
+                        >
                             <div className={styles.listImgBox}>
                                 <img src={e.image} alt="" />
                             </div>
