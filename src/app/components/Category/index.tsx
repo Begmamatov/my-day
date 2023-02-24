@@ -50,6 +50,9 @@ const CategoryData = [
 ]
 
 const Category = () => {
+
+    const [active, setActive] = React.useState(1)
+
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -57,8 +60,13 @@ const Category = () => {
                     CategoryData.map((item) => {
                         return (
                             <button
-                                className={styles.box}
+                                className={`${styles.box}`}
+                                style={item.id === active ? {
+                                    backgroundColor: "#000",
+                                    color: "#fff"
+                                } : {}}
                                 key={item.id}
+                                onClick={() => setActive(item.id)}
                             >
                                 {item.name}
                             </button>
@@ -66,7 +74,7 @@ const Category = () => {
                     })
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

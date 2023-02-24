@@ -29,6 +29,7 @@ export default function RootLayout({
               `,
           }}
         />
+        <script src="//code.jivosite.com/widget/v4PzJgphJT" async></script>
         <noscript>
           <div>
             <img src="https://mc.yandex.ru/watch/92529245" style={{ position: 'absolute', left: '-9999px' }} alt="" />

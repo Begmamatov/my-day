@@ -58,6 +58,10 @@
     width: 45%;
 }
 
+.tetxsbox {
+    width: 100%;
+}
+
 .name {
     font-size: 18px;
     color: #000;
@@ -109,8 +113,8 @@
 
 .closeBtn {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 20px;
+    right: 20px;
     border: none;
     background-color: transparent;
     font-size: 15px;
@@ -177,6 +181,11 @@
         object-fit: contain;
     }
 
+    .closeBtn {
+        top: 5px;
+        right: 5px;
+    }
+
     .rightBox {
         width: 100%;
     }
@@ -227,7 +236,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 20px;
+        padding: 30px 20px;
     }
 
     .leftBox {
@@ -237,6 +246,11 @@
 
     .rightBox {
         width: 100%;
+    }
+
+    .closeBtn {
+        top: 7px;
+        right: 10px;
     }
 
     .btnBox {
@@ -288,6 +302,7 @@
         display: flex;
         padding: 30px;
         justify-content: space-between;
+        justify-items: center;
     }
 
     .leftBox {
@@ -353,6 +368,11 @@
         border-radius: 5px;
     }
 
+    .closeBtn {
+        top: 7px;
+        right: 10px;
+    }
+
     .size {
         font-size: 16px;
         margin: 0;
@@ -389,6 +409,7 @@
         transform: translate(-50%, -50%);
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-items: center;
         width: 80%;
         background-color: #fff;
         padding: 40px;
@@ -406,6 +427,11 @@
 
     .rightBox {
         width: 90%;
+    }
+
+    .tetxsbox {
+        width: 100%;
+        min-height: 250px;
     }
 
     .name {
@@ -501,7 +527,8 @@
         background-color: #fff;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 40px;
+        justify-items: center;
+        padding: 70px 40px;
     }
 
     .leftBox {

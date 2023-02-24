@@ -10,11 +10,11 @@ const Header = () => {
             style={{ backgroundColor: COLORS.black }}
         >
             <div className={styles.content}>
-                <h1>My-Day</h1>
-                <div className={styles.logo_box}>
-                    <img src='/logo.png' alt="" />
-                </div>
-                <a className={styles.number_btn} href="tel:+998 (95) 955 59 37">+998 (95) 955 59 37</a>
+                {/* <h1>My-Day</h1> */}
+                <a className={styles.logo_box} href="#">
+                    <img src='/logo.svg' alt="" />
+                </a>
+                <a className={styles.number_btn} href="tel:+998 (88) 897 99 98">+998 (88) 897 99 98</a>
             </div>
         </div>
     )

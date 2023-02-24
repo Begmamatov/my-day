@@ -11,13 +11,18 @@ const ProductList = () => {
     const { show } = visibleStore
     const { setProduct } = productStore
 
+    const showProductInfo = (e: any) => {
+        setProduct(e)
+        show('productInfo')
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.content}>
                 {ProductData.map((e, index) => {
                     return (
                         <div className={styles.box} key={index}
-                            onClick={() => setProduct(e)}
+                            onClick={showProductInfo.bind(this, e)}
                         >
                             <div className={styles.listImgBox}>
                                 <img src={e.image} alt="" />
@@ -25,7 +30,7 @@ const ProductList = () => {
                             <div className={styles.listAbout}>
                                 <p className={styles.price}>{e.price}<span className={styles.cost}>{e.cost}</span></p>
                                 <p className={styles.name}>{e.name}</p>
-                                <button onClick={() => show('productInfo')} >Buy</button>
+                                <button onClick={showProductInfo.bind(this, e)} >Buy</button>
                             </div>
                         </div>
                     )

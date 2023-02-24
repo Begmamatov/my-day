@@ -82,14 +82,16 @@ const ProductInfo = () => {
           <img src={oneProduct.image} alt="" />
         </div>
         <div className={styles.rightBox}>
-          <h3 className={styles.name}>{oneProduct.name}</h3>
-          <p className={styles.leght}>{oneProduct.criterion}</p>
-          <p className={styles.info}>
-            {
-              oneProduct.description
-            }
-          </p>
-          <h2 className={styles.price}>{oneProduct.price}<span className={styles.sprice}>{oneProduct.discountPrice}</span></h2>
+          <div className={styles.tetxsbox}>
+            <h3 className={styles.name}>{oneProduct.name}</h3>
+            <p className={styles.leght}>{oneProduct.criterion}</p>
+            <p className={styles.info}>
+              {
+                oneProduct.description
+              }
+            </p>
+            <h2 className={styles.price}>{`${oneProduct.price} so'm`}<span className={styles.sprice}>{oneProduct.discountPrice == 0 ? '' : oneProduct.discountPrice}</span></h2>
+          </div>
           <div className={styles.btnBox}>
             <button onClick={() => setForm(form.amount - 1, 'amount')}>-</button>
             <h4 className={styles.size}>{form.amount}</h4>

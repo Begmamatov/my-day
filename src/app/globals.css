@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   font-family: "OpenSans-SemiBold";
+  scroll-behavior: smooth;
 }
 
 body,

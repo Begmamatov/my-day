@@ -32,12 +32,21 @@
     align-items: center;
     height: 25px;
     background: transparent;
+    color: #000;
+    cursor: pointer;
     outline: none;
+    outline-offset: none;
 }
 
+.active {
+    background-color: #000;
+    color: #fff;
+}
+
+
 .box:hover {
-    opacity: 0.6;
-    cursor: pointer;
+    background-color: #000;
+    color: #fff;
 }
 
 @media (min-width: 120px) {
