@@ -8,8 +8,9 @@ import ProductInfo from "./components/ProductInfo/productInfo";
 import ProductList from "./components/ProductList";
 import 'react-toastify/dist/ReactToastify.css';
 import Script from "next/script";
+import { observer } from "mobx-react-lite";
 
-export default function Home() {
+function Home() {
   return (
     <>
       <ToastContainer
@@ -41,3 +42,5 @@ export default function Home() {
     </>
   )
 }
+
+export default observer(Home)

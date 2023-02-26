@@ -1,57 +1,45 @@
+import useRootStore from '@/app/hook/useRootStore'
+import { observer } from 'mobx-react-lite'
 import React from 'react'
 import styles from "./category.module.css"
 
-const CategoryData = [
+export const CategoryData = [
     {
         id: 1,
-        name: "Popular"
+        name: "Barchasi",
+        key: ''
     },
     {
         id: 2,
-        name: "Popular"
+        name: "Ajoyib sovg'alar",
+        key: 'unusual'
+    },
+    {
+        id: 4,
+        name: "Bayram sovg'alari",
+        key: 'holidays'
+    },
+    {
+        id: 5,
+        name: "Shirin sovg'alar",
+        key: 'beautiful'
     },
     {
         id: 3,
-        name: "Popular"
-    },
-    {
-
-        id: 4,
-        name: "Popular"
-    },
-
-
-    {
-        id: 5,
-        name: "Popular"
-
-    },
-    {
-        id: 6,
-        name: "Popular"
-    },
-    {
-        id: 7,
-        name: "Popular"
-    },
-    {
-        id: 8,
-        name: "Popular"
-
-    },
-    {
-        id: 9,
-        name: "Popular"
-    },
-    {
-        id: 10,
-        name: "Popular"
+        name: "Gullar",
+        key: 'flowers'
     },
 ]
 
 const Category = () => {
 
     const [active, setActive] = React.useState(1)
+    const { setCategories } = useRootStore().categoryStore
+
+    const onClick = (item: any) => {
+        setCategories(item)
+        setActive(item.id)
+    }
 
     return (
         <div className={styles.container}>
@@ -66,7 +54,7 @@ const Category = () => {
                                     color: "#fff"
                                 } : {}}
                                 key={item.id}
-                                onClick={() => setActive(item.id)}
+                                onClick={() => onClick(item)}
                             >
                                 {item.name}
                             </button>
@@ -78,4 +66,4 @@ const Category = () => {
     )
 }
 
-export default Category
+export default observer(Category)

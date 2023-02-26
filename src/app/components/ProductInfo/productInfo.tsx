@@ -1,19 +1,19 @@
 'use client'
-import visibleStore from '../../store/VisibleStore'
-import { observer } from 'mobx-react-lite';
-import styles from "./productInfo.module.css"
-import Modal from 'react-modal';
-import InputMask from 'react-input-mask';
-import productStore from '@/app/store/PraductInfo';
+
+import useRootStore from '@/app/hook/useRootStore';
 import { Notifocation } from '@/app/store/Notification';
-import { useState } from 'react';
 import axios from 'axios';
+import { observer } from 'mobx-react-lite';
+import { useState } from 'react';
+import InputMask from 'react-input-mask';
+import Modal from 'react-modal';
+import styles from "./productInfo.module.css";
 
 
 const ProductInfo = () => {
 
-  const { hide, visiable } = visibleStore
-  const { oneProduct, form, setForm, clearForm } = productStore
+  const { hide, visiable } = useRootStore().visiblestore
+  const { oneProduct, form, setForm, clearForm } = useRootStore().productStore
   const [loading, setLoading] = useState(false)
 
 
@@ -90,7 +90,7 @@ const ProductInfo = () => {
                 oneProduct.description
               }
             </p>
-            <h2 className={styles.price}>{`${oneProduct.price} so'm`}<span className={styles.sprice}>{oneProduct.discountPrice == 0 ? '' : oneProduct.discountPrice}</span></h2>
+            <h2 className={styles.price}>{`${oneProduct.price} ${oneProduct.cost ? "so'm" : ''} `}<span className={styles.sprice}>{oneProduct.discountPrice == 0 ? '' : oneProduct.discountPrice}</span></h2>
           </div>
           <div className={styles.btnBox}>
             <button onClick={() => setForm(form.amount - 1, 'amount')}>-</button>

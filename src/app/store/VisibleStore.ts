@@ -5,7 +5,7 @@ type modal = {
     productInfo: boolean
 }
 
-export class VisibleStore {
+export default class VisibleStore {
 
     constructor() {
         makeAutoObservable(this)
@@ -29,5 +29,5 @@ export class VisibleStore {
 
 }
 
-const visibleStore = new VisibleStore();
-export default visibleStore
+// const visibleStore = new VisibleStore();
+// export default visibleStore

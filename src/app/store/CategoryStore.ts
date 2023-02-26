@@ -1,24 +1,35 @@
 import { makeAutoObservable, runInAction } from "mobx";
+import { ProductData } from "../components/ProductList/productData";
+import { productType } from "./PraductInfo";
 
 type Category = {
     id: number,
-    name: string
+    name: string,
+    key: string
 }
 
-export class CategoryStore {
+export default class CategoryStore {
 
     constructor() {
-        makeAutoObservable
+        makeAutoObservable(this)
     }
 
-    categories: Category = {
-        id: 0,
-        name: ''
-    }
+    Products: productType[] = ProductData;
 
-    setCategories = (categories: Category) => {
-        runInAction(() => {
-            this.categories = categories
-        })
+    setCategories = (categorie: Category) => {
+        if (categorie.key === '') {
+            runInAction(() => {
+                this.Products = ProductData;
+            })
+        } else {
+            runInAction(() => {
+                this.Products = ProductData.filter((item) => item.category === categorie.key);
+                console.log(this.Products);
+
+            })
+        }
     }
 }
+
+// const categoryStore = new CategoryStore();
+// export default categoryStore;

@@ -21,7 +21,7 @@ export type productType = {
     image: string;
 }
 
-export class ProductStore {
+export default class ProductStore {
 
     constructor() {
         makeAutoObservable(this)
@@ -66,8 +66,12 @@ export class ProductStore {
     }
 
     setForm = (value: string | number, key: keyof formType) => {
+        if (key === 'amount') {
+            if (value < 1) {
+                value = 1;
+            }
+        }
         this.form[key] = value as never;
-        console.log(toJS(this.form))
     }
 
     clearForm = () => {
@@ -105,5 +109,5 @@ export class ProductStore {
     }
 }
 
-const productStore = new ProductStore()
-export default productStore
+// const productStore = new ProductStore()
+// export default productStore
