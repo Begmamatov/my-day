@@ -41,7 +41,7 @@ const ProductInfo = () => {
         'Content-Type': 'application/json'
       }
     }).then(res => {
-      Notifocation.success('Sizning buyurtmangiz qabul qilindi, tez orada siz bilan bog`lanamiz')
+      Notifocation.success('Sizning buyurtmangiz qabul qilindi, tez fursatda siz bilan bog`lanamiz')
       hide('productInfo')
       clearForm()
     }).catch(err => {

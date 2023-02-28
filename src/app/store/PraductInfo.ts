@@ -7,6 +7,7 @@ type formType = {
     amount: number;
     tel: string;
     time: Date;
+    image?: string;
 };
 
 export type productType = {
@@ -34,6 +35,7 @@ export default class ProductStore {
         amount: 1,
         tel: '',
         time: new Date(),
+        image: ''
     }
 
     validationForm: boolean = false;
@@ -56,6 +58,7 @@ export default class ProductStore {
         runInAction(() => {
             this.form = {
                 id: product.id,
+                image: product.image,
                 name: product.name,
                 price: product.price,
                 amount: 1,

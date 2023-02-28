@@ -35,7 +35,7 @@
     color: #000;
     cursor: pointer;
     outline: none;
-    outline-offset: none;
+    white-space: nowrap;
 }
 
 .active {
