@@ -8,27 +8,19 @@ import useWindowSize from "@rooks/use-window-size"
 const dataImage = [
   {
     id: 1,
-    image: '/banner/Card 1.png',
+    image: '/banner/1.jpg',
   },
   {
     id: 2,
-    image: '/banner/Card 2.png',
+    image: '/banner/2.jpg',
   },
   {
     id: 3,
-    image: '/banner/Card 3.png',
+    image: '/banner/3.jpg',
   },
   {
     id: 1,
-    image: '/banner/Card 1.png',
-  },
-  {
-    id: 2,
-    image: '/banner/Card 2.png',
-  },
-  {
-    id: 3,
-    image: '/banner/Card 3.png',
+    image: '/banner/4.jpg',
   },
 ]
 
