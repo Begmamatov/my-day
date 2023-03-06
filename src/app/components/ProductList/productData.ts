@@ -846,4 +846,15 @@ export const ProductData: productType[] = [
         discountPrice: 0,
         criterion: "1 dona",
     },
+    {
+        id: 75,
+        name: "Dasturxonlar",
+        price: "200 000 ",
+        category: 'unusual',
+        cost: "so'm / 1 dona",
+        image: "/products/h/h-1.jpg",
+        description: `Turli xil ranglarda va turli xil shaklar bilan bezatilgan dasturxonlar. Siz turli xil variantlardan birini tanlashingiz mumkin. Ramazon bayrami uchun ajoyib tuhfa bo'ladi.`,
+        discountPrice: 0,
+        criterion: "1 dona",
+    },
 ]
