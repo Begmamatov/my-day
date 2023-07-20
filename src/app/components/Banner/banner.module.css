@@ -76,7 +76,7 @@
 
 @media (min-width: 992px) {
     .container {
-        width: 90%;
+        width: 85%;
         margin-top: 80px;
         height: calc(100vw * 0.19 - (100vw * 0.01));
         margin-bottom: - calc(100vw * 0.02)

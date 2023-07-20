@@ -9,6 +9,11 @@ type formType = {
     time: Date;
     image?: string;
 };
+export type ImagesType = {
+    id: number,
+    image: string,
+    vidio: string,
+};
 
 export type productType = {
     id: number;
@@ -19,7 +24,7 @@ export type productType = {
     description: string;
     discountPrice: number;
     cost: string;
-    image: string;
+    images: ImagesType[];
 }
 
 export default class ProductStore {
@@ -42,30 +47,32 @@ export default class ProductStore {
     validationFormText: string = '';
 
     oneProduct: productType = {
-        id: 0,
+        id: 1,
         name: '',
         price: '',
         criterion: '',
         description: '',
         discountPrice: 0,
-        image: '',
+        images: [{
+            id: 1,
+            image: "",
+            vidio: "",
+        }],
         cost: ""
     }
 
     setProduct = (product: productType) => {
         this.oneProduct = product;
         this.clearForm();
-        runInAction(() => {
-            this.form = {
-                id: product.id,
-                image: product.image,
-                name: product.name,
-                price: product.price,
-                amount: 1,
-                tel: '',
-                time: new Date(),
-            }
-        })
+        this.form = {
+            id: product?.id,
+            image: product?.images[0].image,
+            name: product?.name,
+            price: product?.price,
+            amount: 1,
+            tel: '',
+            time: new Date(),
+        }
     }
 
     setForm = (value: string | number, key: keyof formType) => {

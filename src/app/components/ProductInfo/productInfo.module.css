@@ -18,7 +18,7 @@
 }
 
 .leftBox {
-    width: 45%;
+    width: 48%;
     height: 100%;
     position: relative;
 }
@@ -43,19 +43,8 @@
     }
 }
 
-.leftBox img {
-    position: absolute;
-    z-index: 1000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    z-index: 1001;
-}
-
 .rightBox {
-    width: 45%;
+    width: 48%;
 }
 
 .tetxsbox {
@@ -173,12 +162,6 @@
         width: 100%;
         height: 250px;
         margin-top: 10px;
-    }
-
-    .leftBox img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .closeBtn {
@@ -310,11 +293,6 @@
         height: 300px;
     }
 
-    .leftBox img {
-        width: 100%;
-        height: 100%;
-    }
-
     .rightBox {
         width: 100%;
     }
@@ -408,7 +386,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 48% 48%;
         justify-items: center;
         width: 80%;
         background-color: #fff;
@@ -416,17 +394,11 @@
     }
 
     .leftBox {
-        width: 90%;
-        height: 350px;
-    }
-
-    .leftBox img {
         width: 100%;
-        height: 100%;
+        height: 400px;
     }
-
     .rightBox {
-        width: 90%;
+        width: 100%;
     }
 
     .tetxsbox {
@@ -526,23 +498,18 @@
         width: 70%;
         background-color: #fff;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 48% 48%;
         justify-items: center;
         padding: 70px 40px;
     }
 
     .leftBox {
-        width: 90%;
+        width: 100%;
         height: 400px;
     }
 
-    .leftBox img {
-        width: 100%;
-        height: 100%;
-    }
-
     .rightBox {
-        width: 90%;
+        width: 100%;
     }
 
     .name {
