@@ -149,7 +149,7 @@ export const ProductData: productType[] = [
     {
         id: 7,
         name: "Samoviy tilaklar chirog'i",
-        price: "6 000 ",
+        price: "6 000",
         category: 'unusual',
         cost: "so'm / 1 dona",
         images: [
