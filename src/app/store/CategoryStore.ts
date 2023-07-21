@@ -25,6 +25,7 @@ export default class CategoryStore {
             runInAction(() => {
                 this.Products = ProductData.filter((item) => item.category === categorie.key);
                 console.log(this.Products);
+
             })
         }
     }

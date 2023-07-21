@@ -29,7 +29,7 @@ function Home() {
         <Header />
         <div style={{ marginTop: "10vh" }}>
           <Banner />
-          {/* <Category /> */}
+          <Category />
           <ProductList />
           <ProductInfo />
         </div>

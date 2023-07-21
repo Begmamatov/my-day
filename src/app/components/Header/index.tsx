@@ -12,9 +12,9 @@ const Header = () => {
             <div className={styles.content}>
                 {/* <h1>My-Day</h1> */}
                 <a className={styles.logo_box} href="#">
-                    <img src='/logo.png' alt="" />
+                    <img src='/logo.svg' alt="" />
                 </a>
-                <a className={styles.number_btn} href="tel:+998 (93) 230 05 00">+998 (93) 230 05 00</a>
+                <a className={styles.number_btn} href="tel:+998 (88) 897 99 98">+998 (88) 897 99 98</a>
             </div>
         </div>
     )
